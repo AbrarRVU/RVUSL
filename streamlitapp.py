@@ -29,7 +29,7 @@ st.write(dataset.head())
 st.subheader("Task 2: Bar Chart - Average Tip by Day")
 # Bar Chart: Average Tip by Day with color for each day
 fig2 = px.bar(
-    tips, x='day', y='tip', color='day',
+    dataset, x='day', y='tip', color='day',
     title='Average Tip by Day',
     labels={'tip': 'Average Tip ($)', 'day': 'Day of the Week'},
     template='plotly_white'
