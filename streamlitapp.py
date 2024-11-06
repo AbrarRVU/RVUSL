@@ -6,13 +6,6 @@ import pandas as pd
 
 # --- Title and Introduction ---
 st.title("Interactive Visualizations with Plotly and Streamlit")
-
-# --- Sidebar Input for Author Information ---
-st.sidebar.header("Visualization Skill Workshop - Plotly")
-name = st.sidebar.text_input("Enter your Name", "Shaikh Abrar Ahmed")
-usn = st.sidebar.text_input("Enter your USN", "Section F - B.Tech")
-instructor_name = st.sidebar.text_input("Instructor Name", "Prof. Ashwini Kumar Mathur, SoCSE")
-
 # --- Load Dataset ---
 dataset = sb.load_dataset('tips')  # Load the 'tips' dataset from seaborn
 
