@@ -22,7 +22,7 @@ dataset = sb.load_dataset('tips')  # Loading the tips dataset
 
 # Display the first few rows of the dataset
 st.write("## Dataset Overview")
-st.write(tips.head())
+st.write(dataset.head())
 
 
 # --- Task 1: Interactive Bar Chart ---
