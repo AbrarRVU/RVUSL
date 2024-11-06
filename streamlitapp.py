@@ -12,7 +12,7 @@ st.title("Interactive Visualizations with Plotly and Streamlit")
 
 # --- Input for Author Information ---
 st.sidebar.header("Visualization skill workshop - Plotly")
-name = st.sidebar.text_input("Shaikh Abrar Ahmed)
+name = st.sidebar.text_input("Shaikh Abrar Ahmed")
 usn = st.sidebar.text_input("Section F - B.Tech")
 instructor_name = st.sidebar.text_input("Prof. Ashwini Kumar Mathur, SoCSE")
 
