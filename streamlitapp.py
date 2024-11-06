@@ -1,49 +1,44 @@
-﻿#Edit the 8th to 12th line code before upload to gihub
 # Import necessary libraries
 import streamlit as st
 import seaborn as sb
 import plotly.express as px
 import pandas as pd
 
-
 # --- Title and Introduction ---
 st.title("Interactive Visualizations with Plotly and Streamlit")
 
-
-# --- Input for Author Information ---
-st.sidebar.header("Visualization skill workshop - Plotly")
-name = st.sidebar.text_input("Shaikh Abrar Ahmed")
-usn = st.sidebar.text_input("Section F - B.Tech")
-instructor_name = st.sidebar.text_input("Prof. Ashwini Kumar Mathur, SoCSE")
+# --- Sidebar Input for Author Information ---
+st.sidebar.header("Visualization Skill Workshop - Plotly")
+name = st.sidebar.text_input("Enter your Name", "Shaikh Abrar Ahmed")
+usn = st.sidebar.text_input("Enter your USN", "Section F - B.Tech")
+instructor_name = st.sidebar.text_input("Instructor Name", "Prof. Ashwini Kumar Mathur, SoCSE")
 
 # --- Load Dataset ---
-dataset = sb.load_dataset('tips')  # Loading the tips dataset
-
+dataset = sb.load_dataset('tips')  # Load the 'tips' dataset from seaborn
 
 # Display the first few rows of the dataset
 st.write("## Dataset Overview")
 st.write(dataset.head())
 
-
 # --- Task 1: Interactive Bar Chart ---
-st.subheader("Task 2: Bar Chart - Average Tip by Day")
+st.subheader("Task 1: Bar Chart - Average Tip by Day")
 # Bar Chart: Average Tip by Day with color for each day
-fig2 = px.bar(
+bar_chart_fig = px.bar(
     dataset, x='day', y='tip', color='day',
     title='Average Tip by Day',
     labels={'tip': 'Average Tip ($)', 'day': 'Day of the Week'},
     template='plotly_white'
 )
-st.plotly_chart(fig2)  # Display the chart in Streamlit
+st.plotly_chart(bar_chart_fig)  # Display the bar chart
 
-# --- Task 2: Scatter Plot ---
-st.subheader("Task 2: Scatter Plot - Total Bill vs. TIp (Color coded by gender)")
+# --- Task 2: Interactive Scatter Plot ---
+st.subheader("Task 2: Scatter Plot - Total Bill vs. Tip (Color-coded by Gender)")
 # Scatter Plot: Total Bill vs. Tip (Color-coded by Gender)
-plot01 = px.scatter(
+scatter_plot_fig = px.scatter(
     dataset, x='total_bill', y='tip', color='sex',
-    title='Total bill V/S Tip (Colored by gender)',
-    labels={'total_bill': 'Total bill ($)', 'tip': 'Tip ($)'},
-    template='plotly_dark', #Cool dark theme
-    size='size' #The size of points based on the size of the group
+    title='Total Bill vs. Tip (Colored by Gender)',
+    labels={'total_bill': 'Total Bill ($)', 'tip': 'Tip ($)'},
+    template='plotly_dark',  # Cool dark theme
+    size='size'  # Size of points based on the size of the group
 )
-st.plotly_chart(plot01)
+st.plotly_chart(scatter_plot_fig)  # Display the scatter plot
