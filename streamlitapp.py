@@ -6,6 +6,10 @@ import pandas as pd
 
 # --- Title and Introduction ---
 st.title("Interactive Visualizations with Plotly and Streamlit")
+# --- Static Information: Name, USN, and University ---
+st.write("Made by: Shaikh Abrar Ahmed")
+st.write("Section F: Roll No. 21")
+st.write("RV University")
 # --- Load Dataset ---
 dataset = sb.load_dataset('tips')  # Load the 'tips' dataset from seaborn
 
